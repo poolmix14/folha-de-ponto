@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Folha de Ponto</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2315803d'/><path d='M9 8h14v16H9z' fill='white'/><path d='M12 13h8M12 17h8M12 21h5' stroke='%2315803d' stroke-width='2'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="barra no-print">
+    <span class="titulo">FOLHA DE PONTO</span>
+    <div class="linha">
+      <button id="btn-imprimir" type="button">🖨️ Imprimir</button>
+      <button id="btn-excel" type="button">📊 Excel</button>
+      <button id="btn-jpg" type="button">🖼️ JPG</button>
+      <button id="btn-margens" type="button" class="ativo">↔️ Margens</button>
+      <button id="btn-padrao" type="button" title="Volta nomes e horários para o padrão">↺ Restaurar padrão</button>
+    </div>
+    <div class="linha">
+      <label>Início: <input type="date" id="inicio"></label>
+      <label>Fim: <input type="date" id="fim"></label>
+    </div>
+  </header>
+
+  <main class="area">
+    <div id="folhas" class="folhas"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
