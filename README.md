@@ -19,7 +19,7 @@ O app roda inteiro no navegador. Não tem servidor, login nem banco de dados.
 ## Regras
 
 - Período padrão: se hoje for dia 26 ou depois, vai do dia 26 deste mês ao dia 25 do próximo. Se for antes do dia 26, vai do dia 26 do mês passado ao dia 25 deste mês.
-- Ao lado do período aparece o **mês de referência**, que é o mês em que o período termina (26/11 a 25/12 = DEZEMBRO).
+- O título mostra o **mês de referência**, que é o mês em que o período termina: de 26/11 a 25/12 sai "FOLHA DE PONTO - DEZEMBRO 2026".
 - Cada folha lista todos os dias do período, com o dia da semana, e tem colunas para Entrada, Intervalo (Saída/Retorno), Saída, Horas Extras e Assinatura, além do campo RESPONSÁVEL no final.
 - Funcionário sem horário de almoço (os dois campos vazios) mostra **"Sem Horário de Janta"**. Para voltar a ter almoço, apague esse texto: os campos aparecem com 00:00.
 - O nome é sempre salvo em MAIÚSCULAS.

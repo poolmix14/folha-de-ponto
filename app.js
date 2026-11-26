@@ -56,12 +56,18 @@ const MESES = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULH
 function mesReferencia(fim) {
   if (!fim) return '';
   const [a, m] = fim.split('-').map(Number);
-  return `${MESES[m - 1]}/${a}`;
+  return `${MESES[m - 1]} ${a}`;
+}
+
+// Título da folha: "FOLHA DE PONTO - DEZEMBRO 2026".
+function textoTitulo() {
+  const mes = mesReferencia(estado.periodo.fim);
+  return mes ? `FOLHA DE PONTO - ${mes}` : 'FOLHA DE PONTO';
 }
 
 function textoPeriodo() {
   const { inicio, fim } = estado.periodo;
-  return `Período: ${dataBR(inicio)} a ${dataBR(fim)}   —   Mês: ${mesReferencia(fim)}`;
+  return `Período: ${dataBR(inicio)} a ${dataBR(fim)}`;
 }
 
 const semJanta = (f) => !f.almocoIni.trim() && !f.almocoFim.trim();
@@ -145,7 +151,7 @@ function folha(f, i, dias) {
   ));
 
   return el('div', { class: 'a4', style: `padding:${estado.margens ? MARGEM_COM : MARGEM_SEM}`, 'data-indice': i },
-    el('div', { class: 'cab-titulo' }, el('span', {}, 'Folha de ponto')),
+    el('div', { class: 'cab-titulo' }, el('span', {}, textoTitulo())),
     el('div', { class: 'bloco' },
       el('div', {}, EMPRESA),
       el('div', {}, `CNPJ:${CNPJ}`),
@@ -187,7 +193,7 @@ function desenhar() {
 function planilha(f, dias) {
   const almoco = semJanta(f) ? 'Sem Horário de Janta' : `Almoço: ${f.almocoIni} ${f.almocoFim}`;
   const topo = [
-    ['FOLHA DE PONTO'], [],
+    [textoTitulo()], [],
     [EMPRESA], [`CNPJ: ${CNPJ}`],
     [textoPeriodo()], [],
     [f.nome], [`Entrada: ${f.entrada}   Saída: ${f.saida}   ${almoco}`], ['Descanso Semanal: Esc'], [],
