@@ -6,15 +6,15 @@ const EMPRESA = 'CONDOMÍNIO DO EDIFÍCIO ANNECY';
 const CNPJ = '00356805000172';
 const DIAS_SEMANA = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 const FUNCIONARIOS_PADRAO = [
-  { nome: 'CARLOS',        entrada: '08:00', saida: '17:00', almocoIni: '12:00', almocoFim: '13:00' },
-  { nome: 'PAULO ROBERTO', entrada: '07:00', saida: '19:00', almocoIni: '12:00', almocoFim: '13:00' },
-  { nome: 'LEANDRO',       entrada: '07:00', saida: '19:00', almocoIni: '12:00', almocoFim: '13:00' },
-  { nome: 'MARCIO',        entrada: '19:00', saida: '07:00', almocoIni: '',      almocoFim: ''      },
-  { nome: 'SERGIO',        entrada: '19:00', saida: '07:00', almocoIni: '',      almocoFim: ''      },
+  { nome: 'CARLOS ANTONIO COSTA DOS SANTOS',        entrada: '08:00', saida: '17:00', almocoIni: '12:00', almocoFim: '13:00' },
+  { nome: 'PAULO ROBERTO MENDONÇA MACHADO JUNIOR', entrada: '07:00', saida: '19:00', almocoIni: '12:00', almocoFim: '13:00' },
+  { nome: 'MAURICIO REGIS COSTA DOS SANTOS JUNIOR',       entrada: '07:00', saida: '19:00', almocoIni: '12:00', almocoFim: '13:00' },
+  { nome: 'MARCIO RICARDO VIANNA GUSMÃO',        entrada: '19:00', saida: '07:00', almocoIni: '',      almocoFim: ''      },
+  { nome: 'SERGIO RODRIGUES DOS SANTOS',        entrada: '19:00', saida: '07:00', almocoIni: '',      almocoFim: ''      },
 ];
 const MARGEM_COM = '24px 68px 80px 68px';
 const MARGEM_SEM = '57px';
-const CHAVE = 'folha-de-ponto:v1';
+const CHAVE = 'folha-de-ponto:v2'; // mude a versão quando trocar FUNCIONARIOS_PADRAO, para todos verem a lista nova
 
 // ---------- Regras ----------
 
