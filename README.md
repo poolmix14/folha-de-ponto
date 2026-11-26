@@ -32,8 +32,8 @@ O app roda inteiro no navegador. Não tem servidor, login nem banco de dados.
 | CARLOS | 08:00 | 17:00 | 12:00–13:00 |
 | PAULO | 07:00 | 19:00 | 12:00–13:00 |
 | MAURICIO | 07:00 | 19:00 | 12:00–13:00 |
-| MARCIO | 19:00 | 07:00 | sem janta |
-| SERGIO | 19:00 | 07:00 | sem janta |
+| MARCIO | 19:00 | 07:00 | SEM JANTA |
+| SERGIO | 19:00 | 07:00 | SEM JANTA |
 
 Para mudar a lista fixa, edite `FUNCIONARIOS_PADRAO` em `app.js`.
 
