@@ -30,8 +30,8 @@ O app roda inteiro no navegador. Não tem servidor, login nem banco de dados.
 | Nome | Entrada | Saída | Almoço |
 |---|---|---|---|
 | CARLOS | 08:00 | 17:00 | 12:00–13:00 |
-| PAULO ROBERTO | 07:00 | 19:00 | 12:00–13:00 |
-| LEANDRO | 07:00 | 19:00 | 12:00–13:00 |
+| PAULO | 07:00 | 19:00 | 12:00–13:00 |
+| MAURICIO | 07:00 | 19:00 | 12:00–13:00 |
 | MARCIO | 19:00 | 07:00 | sem janta |
 | SERGIO | 19:00 | 07:00 | sem janta |
 
