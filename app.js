@@ -49,6 +49,21 @@ function dataBR(iso) {
   return `${d}/${m}/${a}`;
 }
 
+const MESES = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO', 'JULHO',
+  'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO'];
+
+// Mês a que a folha se refere: o mês em que o período termina (26/11 a 25/12 = DEZEMBRO).
+function mesReferencia(fim) {
+  if (!fim) return '';
+  const [a, m] = fim.split('-').map(Number);
+  return `${MESES[m - 1]}/${a}`;
+}
+
+function textoPeriodo() {
+  const { inicio, fim } = estado.periodo;
+  return `Período: ${dataBR(inicio)} a ${dataBR(fim)}   —   Mês: ${mesReferencia(fim)}`;
+}
+
 const semJanta = (f) => !f.almocoIni.trim() && !f.almocoFim.trim();
 
 // ---------- Estado ----------
@@ -134,7 +149,7 @@ function folha(f, i, dias) {
     el('div', { class: 'bloco' },
       el('div', {}, EMPRESA),
       el('div', {}, `CNPJ:${CNPJ}`),
-      el('div', {}, `Período: ${dataBR(estado.periodo.inicio)} a ${dataBR(estado.periodo.fim)}`),
+      el('div', { style: 'white-space:pre' }, textoPeriodo()),
     ),
     el('div', { class: 'bloco' },
       el('div', { style: 'display:flex' }, campo(f.nome, 'nome', (v) => atualizar('nome', v.toUpperCase(), true))),
@@ -174,7 +189,7 @@ function planilha(f, dias) {
   const topo = [
     ['FOLHA DE PONTO'], [],
     [EMPRESA], [`CNPJ: ${CNPJ}`],
-    [`Período: ${dataBR(estado.periodo.inicio)} a ${dataBR(estado.periodo.fim)}`], [],
+    [textoPeriodo()], [],
     [f.nome], [`Entrada: ${f.entrada}   Saída: ${f.saida}   ${almoco}`], ['Descanso Semanal: Esc'], [],
     ['DIA', 'ENTRADA', 'INTERVALO', '', 'SAÍDA', 'HORAS EXTRAS', 'ASSINATURA'],
     ['', '', 'SAÍDA', 'RETORNO', '', '', ''],
